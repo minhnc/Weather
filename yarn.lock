@@ -1200,6 +1200,13 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
+"@dev-plugins/react-query@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@dev-plugins/react-query/-/react-query-0.0.5.tgz#889fadec02677b2dc23f94f7342189f27499e3c8"
+  integrity sha512-GMzjuRk6oTo4FdQjw3bO9SxGgZHrBvrJ8JltAYzlEu2OMHkfcYdx1DFyixf9Wbxqq5p3q3TZGtTNBlaf9e7jCw==
+  dependencies:
+    flatted "^3.2.9"
+
 "@expo/bunyan@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@expo/bunyan/-/bunyan-4.0.0.tgz#be0c1de943c7987a9fbd309ea0b1acd605890c7b"
@@ -3556,6 +3563,11 @@ find-yarn-workspace-root@~2.0.0:
   integrity sha512-1IMnbjt4KzsQfnhnzNd8wUEgXZ44IzZaZmnLYx7D5FZlaHt2gW20Cri8Q+E/t5tIj4+epTBub+2Zxu/vNILzqQ==
   dependencies:
     micromatch "^4.0.2"
+
+flatted@^3.2.9:
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.9.tgz#7eb4c67ca1ba34232ca9d2d93e9886e611ad7daf"
+  integrity sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==
 
 flow-enums-runtime@^0.0.6:
   version "0.0.6"

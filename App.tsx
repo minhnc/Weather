@@ -3,12 +3,15 @@ import "./assets/global.css"
 import { Image, SafeAreaView, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { useReactQueryDevTools } from '@dev-plugins/react-query';
 
 import Home from '@/screens/Home';
 
 const queryClient = new QueryClient()
 
 export default function App() {
+  useReactQueryDevTools(queryClient);
+
   return (
     <QueryClientProvider client={queryClient}>
       <View className='flex-1 relative'>
