@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 
 function Forecast() {
   return (
-    <Text>Forecast</Text>
+    <Text className='text-white font-extrabold'>Forecast</Text>
   )
 }
 

@@ -1,3 +1,5 @@
+import "./assets/global.css"
+
 import { Image, SafeAreaView, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -16,9 +18,9 @@ export default function App() {
           blurRadius={50}
           source={require('assets/images/bg.png')}
         />
-        <View className="flex-1 justify-center items-center">
+        <SafeAreaView className='flex-1 justify-center items-center'>
           <Home />
-        </View>
+        </SafeAreaView>
       </View>
     </QueryClientProvider>
   );
