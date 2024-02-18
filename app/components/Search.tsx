@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { FlatList, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { useDebounce } from "@uidotdev/usehooks";
 import { fetchLocations } from '@/api/weather';
@@ -44,8 +44,8 @@ function Search() {
   }, [debouncedSearchTerm]);
 
   return (
-    <View className='relative h-16 mx-2'>
-      <View className={`flex-1 flex-row w-full p-2 justify-end items-center rounded-full ${bg}`}>
+    <View className='mx-2'>
+      <View className={`flex-row w-full h-16 p-2 justify-end items-center rounded-full ${bg}`}>
         <TextInput
           className={`flex-1 h-16 p-4 text-pretty text-white ${searchStyle}`}
           editable={showSearch}
@@ -64,19 +64,18 @@ function Search() {
         </TouchableOpacity>
       </View>
       {showSearch && locations.length > 0 && (
-        <FlatList
-          className='absolute w-full max-h-[50%] top-16 rounded-3xl bg-gray-300'
-          data={locations}
-          keyExtractor={item => String(item.id)}
-          renderItem={({ item, index }) => {
-            const border = index === locations.length - 1 ? '' : 'border-b-2'
-            return (
-              <TouchableOpacity className={`p-4 pb-2 ${border}`}>
-                <Text className=''>{item.name}, {item.country}</Text>
-              </TouchableOpacity>
-            )
-          }}
-        />
+        <View className='relative flex-1'>
+          <ScrollView className='absolute flex-1 w-full h-fit max-h-[340px] top-2 rounded-3xl bg-gray-300 z-50' showsVerticalScrollIndicator={false}>
+            {locations.map((location, index) => {
+              const border = index === locations.length - 1 ? '' : 'border-b-2'
+              return (
+                <TouchableOpacity key={location.id} className={`p-4 pb-2 ${border}`}>
+                  <Text className=''>{location.name}, {location.country}</Text>
+                </TouchableOpacity>
+              )
+            })}
+          </ScrollView>
+        </View>
       )}
     </View>
   )
