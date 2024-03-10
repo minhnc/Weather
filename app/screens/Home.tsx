@@ -28,7 +28,7 @@ const Home = () => {
 }
 
 const Weather = () => (
-  <View className="flex-1">
+  <View className="flex-1 px-4">
     <Search />
     <Forecast />
     <Forecasts />

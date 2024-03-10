@@ -39,30 +39,5 @@ function fakeLocations() {
         "name": "London, City of London, Greater London, United Kingdom",
         "country": "United Kingdom",
       },
-      {
-        "id": 27965911,
-        "name": "Holborn, Camden, Greater London, United Kingdom",
-        "country": "United Kingdom",
-      },
-      {
-        "id": 27965902,
-        "name": "London, City of London, Greater London, United Kingdom",
-        "country": "United Kingdom",
-      },
-      {
-        "id": 27965921,
-        "name": "Holborn, Camden, Greater London, United Kingdom",
-        "country": "United Kingdom",
-      },
-      {
-        "id": 27965290,
-        "name": "London, City of London, Greater London, United Kingdom",
-        "country": "United Kingdom",
-      },
-      {
-        "id": 23796591,
-        "name": "Holborn, Camden, Greater London, United Kingdom",
-        "country": "United Kingdom",
-      },
     ]
 }

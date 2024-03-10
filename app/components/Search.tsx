@@ -32,6 +32,10 @@ function Search() {
     }, 5)
   }
 
+  const selectLocation = (location: LOCATION) => {
+    toggleSearch(false)
+  }
+
   useEffect(() => {
     const doSearch = async () => {
       if ((debouncedSearchTerm ?? '').length < 2) return
@@ -44,10 +48,10 @@ function Search() {
   }, [debouncedSearchTerm]);
 
   return (
-    <View className='mx-2'>
-      <View className={`flex-row w-full h-16 p-2 justify-end items-center rounded-full ${bg}`}>
+    <View className='h-16 z-50'>
+      <View className={`flex-row w-full p-2 justify-end items-center rounded-full ${bg}`}>
         <TextInput
-          className={`flex-1 h-16 p-4 text-pretty text-white ${searchStyle}`}
+          className={`flex-1 h-12 p-4 text-pretty text-white ${searchStyle}`}
           editable={showSearch}
           placeholder='Search city'
           placeholderTextColor={'gray'}
@@ -65,11 +69,11 @@ function Search() {
       </View>
       {showSearch && locations.length > 0 && (
         <View className='relative flex-1'>
-          <ScrollView className='absolute flex-1 w-full h-fit max-h-[340px] top-2 rounded-3xl bg-gray-300 z-50' showsVerticalScrollIndicator={false}>
+          <ScrollView className='absolute flex-1 w-full h-fit max-h-[340px] top-2 rounded-3xl bg-gray-300' showsVerticalScrollIndicator={false}>
             {locations.map((location, index) => {
               const border = index === locations.length - 1 ? '' : 'border-b-2'
               return (
-                <TouchableOpacity key={location.id} className={`p-4 pb-2 ${border}`}>
+                <TouchableOpacity key={location.id} className={`p-4 pb-2 ${border}`} onPress={() => selectLocation(location)}>
                   <Text className=''>{location.name}, {location.country}</Text>
                 </TouchableOpacity>
               )

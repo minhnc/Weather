@@ -1,6 +1,7 @@
 import "./assets/global.css"
 
-import { Image, SafeAreaView, View } from 'react-native';
+import { Image, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { useReactQueryDevTools } from '@dev-plugins/react-query';
