@@ -1,7 +1,7 @@
 import "./assets/global.css"
 
-import { Image, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Image } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { useReactQueryDevTools } from '@dev-plugins/react-query';
@@ -15,17 +15,15 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <View className='flex-1 relative'>
+      <SafeAreaProvider>
         <StatusBar style="light" />
         <Image
           className="absolute w-full h-full"
           blurRadius={50}
           source={require('assets/images/bg.png')}
         />
-        <SafeAreaView className='flex-1 justify-center items-center'>
-          <Home />
-        </SafeAreaView>
-      </View>
+        <Home />
+      </SafeAreaProvider>
     </QueryClientProvider>
   );
 }

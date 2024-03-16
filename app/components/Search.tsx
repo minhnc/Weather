@@ -49,9 +49,9 @@ function Search() {
 
   return (
     <View className='h-16 z-50'>
-      <View className={`flex-row w-full p-2 justify-end items-center rounded-full ${bg}`}>
+      <View className={`flex-row w-full justify-end items-center rounded-full ${bg}`}>
         <TextInput
-          className={`flex-1 h-12 p-4 text-pretty text-white ${searchStyle}`}
+          className={`flex-1 h-12 p-4 text-white ${searchStyle}`}
           editable={showSearch}
           placeholder='Search city'
           placeholderTextColor={'gray'}

@@ -1,4 +1,5 @@
 import { ActivityIndicator, Text, View } from "react-native"
+import { SafeAreaView } from "react-native-safe-area-context"
 import { useQuery } from "react-query"
 
 import Forecast from "@/components/Forecast"
@@ -14,25 +15,27 @@ const Home = () => {
   })
 
   return (
-    <>
+    <View className='flex-1 justify-center items-center m-4'>
       {
         isLoading ? (
           <ActivityIndicator size={'large'} color={'white'} />
         ) :
           isError ? (
             <Text className="text-white font-extrabold">Something wrong...</Text>
-          ) : <Weather />
+          ) : (
+            <Weather />
+          )
       }
-    </>
+    </View>
   )
 }
 
 const Weather = () => (
-  <View className="flex-1 px-4">
+  <SafeAreaView>
     <Search />
     <Forecast />
     <Forecasts />
-  </View>
+  </SafeAreaView>
 )
 
 export default Home
